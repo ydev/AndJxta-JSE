@@ -1,6 +1,7 @@
 package edge;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -22,8 +23,8 @@ public class EdgeStart {
 			return;
 		}
 		
-		EdgePeer peer = new EdgePeer();
-	      peer.start(name);
+		JXTAService peer = new JXTAService();
+	      peer.start(name, new File("cache"), "Mirko", name, "");
 	}
 
 }
