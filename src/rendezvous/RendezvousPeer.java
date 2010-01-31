@@ -46,10 +46,11 @@ public class RendezvousPeer implements RendezvousListener {
 		URI seedingURI;
 		seedingURI = new File("seeds.txt").toURI();
 		configurator.addRdvSeedingURI(seedingURI);
-		configurator.setMode(NetworkConfigurator.RDV_SERVER);//	+ NetworkConfigurator.RELAY_SERVER);
+		configurator.setMode(NetworkConfigurator.RDV_SERVER + NetworkConfigurator.RELAY_SERVER);//	+ NetworkConfigurator.RELAY_SERVER);
 
 		configurator.setUseOnlyRendezvousSeeds(true);
-
+		configurator.setUseOnlyRelaySeeds(true);
+		
 		configurator.setTcpEnabled(true);
 		configurator.setTcpIncoming(true);
 		configurator.setTcpOutgoing(true);
