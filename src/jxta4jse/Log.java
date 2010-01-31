@@ -1,4 +1,4 @@
-package edge;
+package jxta4jse;
 
 public class Log {
 	public static void d(String tag, String msg) {
