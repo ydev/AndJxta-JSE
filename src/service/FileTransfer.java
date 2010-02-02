@@ -39,15 +39,15 @@ public class FileTransfer {
 				length = fileStream.read(buffer);
 
 				Message msg = new Message();
-				msg.addMessageElement(new StringMessageElement("Type", String
-						.valueOf(Jxta.MESSAGE_TYPE_FILE), null));
+				msg.addMessageElement(new StringMessageElement("Type",
+						Jxta.MessageType.FILE.toString(), null));
 				msg.addMessageElement(new StringMessageElement("From", peerId,
 						null));
 				msg.addMessageElement(new StringMessageElement("FromName",
 						instanceName, null));
 
-				msg.addMessageElement(new StringMessageElement("Filename",
-						file.getName(), null));
+				msg.addMessageElement(new StringMessageElement("Filename", file
+						.getName(), null));
 				msg.addMessageElement(new StringMessageElement(
 						"FilePackageSize", String.valueOf((Math.round((file
 								.length() / PACKAGE_SIZE)) + 2)), null));

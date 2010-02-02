@@ -24,7 +24,7 @@ public class JxtaApp {
 		}
 
 		Jxta peer = new Jxta();
-		//peer.setActAsRendezvous(true);
+		// peer.setActAsRendezvous(true);
 		peer.start(name, new File("cache"), name, "");
 	}
 

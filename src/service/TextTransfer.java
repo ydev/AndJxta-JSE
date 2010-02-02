@@ -23,8 +23,8 @@ public class TextTransfer {
 		Log.d(JxtaApp.TAG, "Try to send message now...");
 		try {
 			Message msg = new Message();
-			MessageElement typeElem = new StringMessageElement("Type", String
-					.valueOf(Jxta.MESSAGE_TYPE_TEXT), null);
+			MessageElement typeElem = new StringMessageElement("Type",
+					Jxta.MessageType.TEXT.toString(), null);
 			MessageElement fromElem = new StringMessageElement("From", peerId,
 					null);
 			MessageElement fromNameElem = new StringMessageElement("FromName",

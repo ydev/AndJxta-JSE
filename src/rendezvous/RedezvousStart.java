@@ -2,7 +2,6 @@ package rendezvous;
 
 import java.io.File;
 
-
 public class RedezvousStart {
 
 	public static void main(String[] args) {

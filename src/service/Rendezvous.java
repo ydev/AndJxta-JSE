@@ -4,7 +4,6 @@ import java.util.Date;
 
 import jxta4jse.JxtaApp;
 import jxta4jse.Log;
-
 import net.jxta.peergroup.PeerGroup;
 import net.jxta.rendezvous.RendezVousService;
 import net.jxta.rendezvous.RendezvousEvent;

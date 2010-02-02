@@ -21,8 +21,9 @@ public class Peer {
 
 	public boolean equals(Object obj) {
 		Peer objPeer = (Peer) obj;
-
 		return objPeer.name.equals(this.name);
+		// return
+		// objPeer.pipeAdvertisement.getID().equals(this.pipeAdvertisement.getID());
 	}
 
 	public String getName() {

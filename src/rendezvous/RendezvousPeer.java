@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 
-import net.jxta.discovery.DiscoveryService;
 import net.jxta.exception.PeerGroupException;
 import net.jxta.peergroup.NetPeerGroupFactory;
 import net.jxta.peergroup.PeerGroup;
@@ -24,7 +23,7 @@ public class RendezvousPeer implements RendezvousListener {
 	public void start(String name, File cache) {
 		instanceName = name;
 		cacheHome = cache;
-		
+
 		configureJXTA();
 		startJXTA();
 		waitForQuit();
@@ -45,11 +44,12 @@ public class RendezvousPeer implements RendezvousListener {
 		URI seedingURI;
 		seedingURI = new File("seeds.txt").toURI();
 		configurator.addRdvSeedingURI(seedingURI);
-		configurator.setMode(NetworkConfigurator.RDV_SERVER + NetworkConfigurator.RELAY_SERVER);
+		configurator.setMode(NetworkConfigurator.RDV_SERVER
+				+ NetworkConfigurator.RELAY_SERVER);
 
 		configurator.setUseOnlyRendezvousSeeds(true);
 		configurator.setUseOnlyRelaySeeds(true);
-		
+
 		configurator.setTcpEnabled(true);
 		configurator.setTcpIncoming(true);
 		configurator.setTcpOutgoing(true);
@@ -70,7 +70,8 @@ public class RendezvousPeer implements RendezvousListener {
 		NetPeerGroupFactory factory;
 		try {
 			factory = new NetPeerGroupFactory((ConfigParams) configurator
-					.getPlatformConfig(), new File(cacheHome, instanceName).toURI());
+					.getPlatformConfig(), new File(cacheHome, instanceName)
+					.toURI());
 		} catch (PeerGroupException e) {
 			System.out.println("PeerGroupException " + e.getMessage());
 			System.exit(1);
